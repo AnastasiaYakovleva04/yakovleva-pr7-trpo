@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.IO;
@@ -18,6 +19,8 @@ namespace yakovleva_pr7
         public string Patronimic { get; set; }
         public string Specialization { get; set; }
         public string Password { get; set; }
+        [JsonIgnore] public string ConfirmPassword { get; set; }
+        
         
         private Dictionary<int, string> ids = new Dictionary<int, string>();
         private static bool isLoaded = false;
@@ -25,6 +28,7 @@ namespace yakovleva_pr7
 
         public Random rnd = new Random();
 
+        //загрузка докторов из json файлов
         public void LoadDoctors()
         {
             string[] doctorFiles = Directory.GetFiles(Directory.GetCurrentDirectory(), "D_*.json");
@@ -36,6 +40,7 @@ namespace yakovleva_pr7
                 ids[doctor.Id] = doctor.Password;
             }
         }
+        //регистрация
         public void Registration(string name, string surname, string patronimic, string specialization, string password, string confPass)
         {
             if (name == "" || surname == "" || patronimic == "" || specialization == "" || password == "" || confPass == "")
@@ -56,15 +61,13 @@ namespace yakovleva_pr7
             ids[id] = password;
             
         }
-
+        //вход
         public void Login(string id, string password)
         {
-            if (id == "" && password == "")
+            if (id == "0" && password == "")
                 throw new ArgumentException("Все поля должны быть заполнены");
 
-            if (!int.TryParse(id, out int ID))
-                throw new FormatException("Некорректный ввод ID");
-
+            var ID = int.Parse(id);
             if (!ids.ContainsKey(ID) || ids[ID] != password)
                 throw new ArgumentException("Неверный логин или пароль");
 

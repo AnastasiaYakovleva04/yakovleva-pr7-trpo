@@ -13,9 +13,6 @@ using System.IO;
 
 namespace yakovleva_pr7
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public Doctor doc;
@@ -27,52 +24,45 @@ namespace yakovleva_pr7
             DataContext = doc;
             doc.LoadDoctors();
         }
-
+        //нажатие на кнопку регистрации
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
-            var name = NameTextBox.Text;
-            var surname = SurnameTextBox.Text;
-            var patronimic = PatronimicTextBox.Text;
-            var specialization = SpecTextBox.Text;
-            var password = PassTextBox.Text;
-            var confirmPassword = ConfirmPassTextBox.Text;
             try
             {
-                doc.Registration(name, surname, patronimic, specialization, password, confirmPassword);
+                doc.Registration(doc.Name, doc.Surname, doc.Patronimic, doc.Specialization, doc.Password, doc.ConfirmPassword);
                 MessageBox.Show($"Вы зарегистрированы. Ваш ID = {doc.Id}", "Успешно");
                 var jsonString = JsonSerializer.Serialize(doc);
                 var path = $"D_{doc.Id}.json";
                 File.WriteAllText(path, jsonString, Encoding.UTF8);
-                NameTextBox.Text = "";
-                SurnameTextBox.Text = "";
-                PatronimicTextBox.Text = "";
-                SpecTextBox.Text = "";
-                PassTextBox.Clear();
-                ConfirmPassTextBox.Clear();
+                ClearTextBoxes(RegPanel);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
+        //нажатие на кнопку входа
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            var id = IDTextBox.Text;
-            var password = PassLoginTextBox.Text;
             try
             {
-                doc.Login(id, password);
+                doc.Login(doc.Id.ToString(), doc.Password);
                 MessageBox.Show("Вход выполнен", "Успешно");
-                IDTextBox.Clear();
-                PassLoginTextBox.Clear();
                 DataContext = null;
                 DataContext = doc;
+                ClearTextBoxes(RegPanel);
+                ClearTextBoxes(LoginPanel);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        //очистка текстбоксов с грида
+        private void ClearTextBoxes(Grid panel)
+        {
+            foreach (TextBox textBox in panel.Children.OfType<TextBox>())
+                textBox.Clear();
         }
     }
 }

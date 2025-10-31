@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="515" Width="800"
         Padding="5">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -21,7 +22,7 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.RowSpan="2" Grid.Column="0">
+        <Grid x:Name="RegPanel" Grid.RowSpan="2" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -42,17 +43,17 @@
             <Label Margin="2" Content="Пароль:" Grid.Row="4" Grid.Column="0"/>
             <Label Margin="2" Content="Подтвердите пароль:" Grid.Row="5" Grid.Column="0"/>
 
-            <TextBox Name="NameTextBox"  Margin="2" Grid.Row="0" Grid.Column="1" />
-            <TextBox Name="SurnameTextBox" Margin="2" Grid.Row="1" Grid.Column="1" />
-            <TextBox Name="PatronimicTextBox" Margin="2" Grid.Row="2" Grid.Column="1" />
-            <TextBox Name="SpecTextBox" Margin="2" Grid.Row="3" Grid.Column="1" />
-            <TextBox Name="PassTextBox" Margin="2" Grid.Row="4" Grid.Column="1"/>
-            <TextBox Name="ConfirmPassTextBox" Margin="2" Grid.Row="5" Grid.Column="1"/>
+            <TextBox Text="{Binding Name, Mode=TwoWay}" Margin="2" Grid.Row="0" Grid.Column="1" />
+            <TextBox Text="{Binding Surname, Mode=TwoWay}" Margin="2" Grid.Row="1" Grid.Column="1" />
+            <TextBox Text="{Binding Patronimic, Mode=TwoWay}" Margin="2" Grid.Row="2" Grid.Column="1" />
+            <TextBox Text="{Binding Specialization, Mode=TwoWay}" Margin="2" Grid.Row="3" Grid.Column="1" />
+            <TextBox Text="{Binding Password, Mode=OneWayToSource}" Margin="2" Grid.Row="4" Grid.Column="1"/>
+            <TextBox Text="{Binding ConfirmPassword, Mode=OneWayToSource}" Margin="2" Grid.Row="5" Grid.Column="1"/>
 
             <Button Name="RegBtn" Margin="2" Grid.ColumnSpan="2" Grid.Row="6" Content="Регистрация" Click="RegBtn_Click"/>
         </Grid>
-        
-        <Grid Grid.Row="2" Grid.Column="0">
+
+        <Grid x:Name="LoginPanel"  Grid.Row="2" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -66,8 +67,8 @@
             <Label Margin="2" Content="ID:" Grid.Row="0" Grid.Column="0"/>
             <Label Margin="2" Content="Пароль:" Grid.Row="1" Grid.Column="0"/>
 
-            <TextBox Name="IDTextBox" Margin="2" Grid.Row="0" Grid.Column="1"/>
-            <TextBox Name="PassLoginTextBox" Margin="2" Grid.Row="1" Grid.Column="1" MaxLength="5"/>
+            <TextBox Text="{Binding Id, Mode=OneWayToSource}" Margin="2" Grid.Row="0" Grid.Column="1" MaxLength="5"/>
+            <TextBox Text="{Binding Password, Mode=OneWayToSource}" Margin="2" Grid.Row="1" Grid.Column="1" />
             
             <Button Name="LoginBtn" Margin="2" Grid.ColumnSpan="2" Grid.Row="2" Content="Вход" Click="LoginBtn_Click"/>
         </Grid>
@@ -75,31 +76,29 @@
         <StackPanel Orientation="Vertical" Margin="2" Grid.Row="3" Grid.Column="0">
             <StackPanel Orientation="Horizontal">
                 <Label Margin="2" Content="ID:" />
-                <Label Margin="2" Content="{Binding Id}" />
+                <Label Margin="2" Content="{Binding Id, Mode=OneTime}" />
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Margin="2" Content="Имя:" />
-                <Label Margin="2" Content="{Binding Name}" />
+                <Label Margin="2" Content="{Binding Name, Mode=OneTime}" />
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Margin="2" Content="Фамилия:"/>
-                <Label Margin="2" Content="{Binding Surname}" />
+                <Label Margin="2" Content="{Binding Surname, Mode=OneTime}" />
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Margin="2" Content="Отчество:"/>
-                <Label Margin="2" Content="{Binding Patronimic}" />
+                <Label Margin="2" Content="{Binding Patronimic, Mode=OneTime}" />
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Margin="2" Content="Специальность:"/>
-                <Label Margin="2" Content="{Binding Specialization}" />
+                <Label Margin="2" Content="{Binding Specialization, Mode=OneTime}" />
             </StackPanel>
         </StackPanel>
-        
-
 
     </Grid>
 </Window>
