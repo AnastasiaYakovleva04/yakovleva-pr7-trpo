@@ -16,13 +16,34 @@ namespace yakovleva_pr7
     public partial class MainWindow : Window
     {
         public Doctor doc;
+        public Pacient pacAdd;  
+        public Pacient pacWork;
+        public SystemStatus sys;
 
         public MainWindow()
         {
+            Directory.CreateDirectory("Doctors");
+            Directory.CreateDirectory("Pacients");
+
             doc = new Doctor();
+            pacAdd = new Pacient();
+            pacWork = new Pacient();
+            sys = new SystemStatus();
+
             InitializeComponent();
+            AddPacPanel.IsEnabled = EditPacPanel.IsEnabled = SearchPacPanel.IsEnabled = false;
+
             DataContext = doc;
+            DocInfoPanel.DataContext = null;
+            AddPacPanel.DataContext = pacAdd;
+            EditPacPanel.DataContext = SearchPacPanel.DataContext = PacInfoPanel.DataContext = pacWork;
+            SystemStatusPanel.DataContext = sys;
+
+            pacWork.Reset();
             doc.LoadDoctors();
+            pacAdd.LoadPacients();
+            pacWork.LoadPacients();
+            sys.UpdateCounts();
         }
         //нажатие на кнопку регистрации
         private void RegBtn_Click(object sender, RoutedEventArgs e)
@@ -31,10 +52,8 @@ namespace yakovleva_pr7
             {
                 doc.Registration(doc.Name, doc.Surname, doc.Patronimic, doc.Specialization, doc.Password, doc.ConfirmPassword);
                 MessageBox.Show($"Вы зарегистрированы. Ваш ID = {doc.Id}", "Успешно");
-                var jsonString = JsonSerializer.Serialize(doc);
-                var path = $"D_{doc.Id}.json";
-                File.WriteAllText(path, jsonString, Encoding.UTF8);
                 ClearTextBoxes(RegPanel);
+                sys.UpdateCounts();
             }
             catch(Exception ex)
             {
@@ -48,10 +67,10 @@ namespace yakovleva_pr7
             {
                 doc.Login(doc.Id.ToString(), doc.Password);
                 MessageBox.Show("Вход выполнен", "Успешно");
-                DataContext = null;
-                DataContext = doc;
                 ClearTextBoxes(RegPanel);
                 ClearTextBoxes(LoginPanel);
+                DocInfoPanel.DataContext = doc;
+                AddPacPanel.IsEnabled = EditPacPanel.IsEnabled = SearchPacPanel.IsEnabled = true;
             }
             catch(Exception ex)
             {
@@ -63,6 +82,57 @@ namespace yakovleva_pr7
         {
             foreach (TextBox textBox in panel.Children.OfType<TextBox>())
                 textBox.Clear();
+        }
+        //добавить пациента
+        private void AddPacientBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var newPac = doc.AddPacient(pacAdd.Name, pacAdd.Surname, pacAdd.Patronimic,
+                                 pacAdd.Birthday, pacAdd.LastAppointment, doc.Id,
+                                 pacAdd.Diagnosis, pacAdd.Recomendations);
+                MessageBox.Show($"Пациент добавлен. ID: {newPac.Id}", "Успешно");
+
+                pacAdd.pacients[newPac.Id] = newPac;
+                pacWork.pacients[newPac.Id] = newPac;
+                pacAdd.Reset();
+                sys.UpdateCounts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        //сохранить изменения при редактировании
+        private void SaveChangesPacientBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                pacWork.SaveChanges();
+                MessageBox.Show("Изменения сохранены", "Успешно");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        //поиск пациента
+        private void SearchPacientBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                pacWork.SearchPacient();
+                MessageBox.Show("Пациент найден", "Успешно");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        //сброс редактирования
+        private void ResetPacientBtn_Click(object sender, RoutedEventArgs e)
+        {
+            pacWork.Reset();
         }
     }
 }

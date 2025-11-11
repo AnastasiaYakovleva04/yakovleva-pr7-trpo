@@ -1,38 +1,90 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
-using System.IO;
+using System.Windows.Controls;
 
 namespace yakovleva_pr7
 {
-    public class Doctor
+    public class Doctor : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Patronimic { get; set; }
-        public string Specialization { get; set; }
-        public string Password { get; set; }
-        [JsonIgnore] public string ConfirmPassword { get; set; }
-        
-        
-        private Dictionary<int, string> ids = new Dictionary<int, string>();
-        private static bool isLoaded = false;
-        public Doctor() { }
+        private int _id = 0;
+        public int Id
+        {
+            get => _id;
+            set { _id = value; OnPropertyChanged(); }
+        }
 
+        private string _name = "";
+        public string Name
+        {
+            get => _name;
+            set { _name = value; OnPropertyChanged(); }
+        }
+
+        private string _surname = "";
+        public string Surname
+        {
+            get => _surname;
+            set { _surname = value; OnPropertyChanged(); }
+        }
+
+        private string _patronimic = "";
+        public string Patronimic
+        {
+            get => _patronimic;
+            set { _patronimic = value; OnPropertyChanged(); }
+        }
+
+        private string _specialization = "";
+        public string Specialization
+        {
+            get => _specialization;
+            set { _specialization = value; OnPropertyChanged(); }
+        }
+
+        private string _password = "";
+        public string Password
+        {
+            get => _password;
+            set { _password = value; OnPropertyChanged(); }
+        }
+
+        private string _confirmPassword = "";
+        [JsonIgnore]
+        public string ConfirmPassword
+        {
+            get => _confirmPassword;
+            set { _confirmPassword = value; OnPropertyChanged(); }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public Doctor() { }
+        private Dictionary<int, string> ids = new Dictionary<int, string>();
         public Random rnd = new Random();
 
         //загрузка докторов из json файлов
         public void LoadDoctors()
         {
-            string[] doctorFiles = Directory.GetFiles(Directory.GetCurrentDirectory(), "D_*.json");
+            string doctorDir = "Doctors";
+            if (!Directory.Exists(doctorDir)) 
+                return;
 
+            string[] doctorFiles = Directory.GetFiles(doctorDir, "D_*.json");
             foreach (string file in doctorFiles)
             {
                 string jsonString = File.ReadAllText(file);
@@ -40,6 +92,7 @@ namespace yakovleva_pr7
                 ids[doctor.Id] = doctor.Password;
             }
         }
+
         //регистрация
         public void Registration(string name, string surname, string patronimic, string specialization, string password, string confPass)
         {
@@ -59,8 +112,11 @@ namespace yakovleva_pr7
             Specialization = specialization;
             Password = password;
             ids[id] = password;
-            
+            var jsonString = JsonSerializer.Serialize(this);
+            var path = Path.Combine("Doctors", $"D_{Id}.json");
+            File.WriteAllText(path, jsonString, Encoding.UTF8);
         }
+
         //вход
         public void Login(string id, string password)
         {
@@ -72,7 +128,7 @@ namespace yakovleva_pr7
                 throw new ArgumentException("Неверный логин или пароль");
 
 
-            var path = $"D_{ID}.json"; 
+            var path = $"Doctors\\D_{ID}.json"; 
             if (!File.Exists(path))
                 throw new FileNotFoundException("Пользователь не найден");
 
@@ -85,6 +141,36 @@ namespace yakovleva_pr7
             this.Patronimic = doctor.Patronimic;
             this.Specialization = doctor.Specialization;
             this.Password = doctor.Password;
+        }
+
+        //добавить пациента
+        public Pacient AddPacient(string name, string surname, string patronimic, DateTime bd, DateTime lastAppointment, int lastDoc, string diagnosis, string recomendations)
+        {
+            if (name == "" || surname == "" || patronimic == "" || diagnosis == "" || recomendations == "")
+                throw new ArgumentException("Все поля должны быть заполнены");
+
+            if (bd > lastAppointment)
+                throw new ArgumentException("Дата рождения не должна быть позже последнего визита");
+
+            Pacient pacient = new Pacient();
+            int id;
+            do { id = rnd.Next(1000000, 10000000); }
+            while (ids.ContainsKey(id));
+            pacient.Id = id;
+            pacient.Name = name;
+            pacient.Surname = surname;
+            pacient.Patronimic = patronimic;
+            pacient.Birthday = bd;
+            pacient.LastDoctor = lastDoc;
+            pacient.LastAppointment = lastAppointment;
+            pacient.Diagnosis = diagnosis;
+            pacient.Recomendations = recomendations;
+            pacient.pacients[id] = pacient;
+
+            var jsonString = JsonSerializer.Serialize(pacient);
+            var path = Path.Combine("pacients", $"P_{pacient.Id}.json");
+            File.WriteAllText(path, jsonString, Encoding.UTF8);
+            return pacient;
         }
     }
 }

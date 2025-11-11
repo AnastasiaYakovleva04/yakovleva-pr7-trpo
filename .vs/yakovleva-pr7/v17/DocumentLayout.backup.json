@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pacient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pacient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\systemstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:systemstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,7 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -42,26 +50,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SystemStatus.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\SystemStatus.cs",
+              "RelativeDocumentMoniker": "SystemStatus.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\SystemStatus.cs",
+              "RelativeToolTip": "SystemStatus.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAIwCQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T11:06:32.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Pacient.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pacient.cs",
+              "RelativeDocumentMoniker": "Pacient.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pacient.cs*",
+              "RelativeToolTip": "Pacient.cs*",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAiwIIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T07:44:14.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Doctor.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Doctor.cs",
               "RelativeDocumentMoniker": "Doctor.cs",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Doctor.cs*",
-              "RelativeToolTip": "Doctor.cs*",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAUwEEAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Doctor.cs",
+              "RelativeToolTip": "Doctor.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAcwJwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-22T06:23:12.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAUwDAAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAIwEcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-22T05:57:17.405Z",
               "EditorCaption": ""
