@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -48,32 +49,11 @@ namespace yakovleva_pr7
             set { _birthday = value; OnPropertyChanged(); } 
         }
 
-        private DateTime _lastAppointment = DateTime.Today;
-        public DateTime LastAppointment 
-        { 
-            get => _lastAppointment; 
-            set { _lastAppointment = value; OnPropertyChanged(); } 
-        }
-
-        private int _lastDoctor = 0;
-        public int LastDoctor 
-        { 
-            get => _lastDoctor; 
-            set { _lastDoctor = value; OnPropertyChanged(); } 
-        }
-
-        private string _diagnosis = "";
-        public string Diagnosis 
-        { 
-            get => _diagnosis; 
-            set { _diagnosis = value; OnPropertyChanged(); } 
-        }
-
-        private string _recomendations = "";
-        public string Recomendations
+        private string _phoneNumber = "";
+        public string PhoneNumber
         {
-            get => _recomendations; 
-            set { _recomendations = value; OnPropertyChanged(); } 
+            get => _phoneNumber;
+            set { _phoneNumber = value; OnPropertyChanged(); }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -83,7 +63,9 @@ namespace yakovleva_pr7
         }
 
         public Dictionary<int, Pacient> pacients = new Dictionary<int, Pacient>();
+        public List<AppointmentStory> AppointmentStories { get; set; } = new List<AppointmentStory>();
         public Random rnd = new Random();
+        public static Regex regexPhone = new Regex(@"^(\+7|8) \(\d{3}\) \d{3}-\d{2}-\d{2}$");
 
         //загрузка пациентов из json файлов
         public void LoadPacients()
@@ -111,10 +93,6 @@ namespace yakovleva_pr7
                 Surname = foundPacient.Surname;
                 Patronimic = foundPacient.Patronimic;
                 Birthday = foundPacient.Birthday;
-                LastAppointment = foundPacient.LastAppointment;
-                LastDoctor = foundPacient.LastDoctor;
-                Diagnosis = foundPacient.Diagnosis;
-                Recomendations = foundPacient.Recomendations;
             }
             else
                 throw new ArgumentException("Пациент с таким ID не найден");
@@ -123,20 +101,15 @@ namespace yakovleva_pr7
         //сохранение изменений при редактировании информации о пациенте
         public void SaveChanges()
         {
-            if (!pacients.ContainsKey(Id))
-                throw new ArgumentException("Пациент с таким ID не найден");
-
             if (string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(Surname))
                 throw new ArgumentException("Имя и фамилия обязательны");
 
+            if (!regexPhone.IsMatch(PhoneNumber))
+                throw new ArgumentException("Поле номер телефона должен быть формата 'X (XXX) XXX-XX-XX'");
 
-            var pacientToUpdate = pacients[Id];
-            pacientToUpdate.Name = Name;
-            pacientToUpdate.Surname = Surname;
-            pacientToUpdate.Patronimic = Patronimic;
-            pacientToUpdate.Birthday = Birthday;
+            pacients[Id] = this;
 
-            var jsonString = JsonSerializer.Serialize(pacients[Id]);
+            var jsonString = JsonSerializer.Serialize(this);
             var path = Path.Combine("Pacients", $"P_{Id}.json");
             File.WriteAllText(path, jsonString, Encoding.UTF8);
         }
@@ -144,9 +117,8 @@ namespace yakovleva_pr7
         //сброс информации о пациенте
         public void Reset()
         {
-            Id = 0;
-            Name = Surname = Patronimic = Diagnosis = Recomendations = "";
-            Birthday = LastAppointment = DateTime.MinValue;
+            Name = Surname = Patronimic = "";
+            Birthday = DateTime.MinValue;
         }
     }
 }

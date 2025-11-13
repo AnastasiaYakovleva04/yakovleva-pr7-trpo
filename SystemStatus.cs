@@ -11,15 +11,15 @@ namespace yakovleva_pr7
 {
     public class SystemStatus:INotifyPropertyChanged
     {
-        private int _doctorsCount;
-        private int _pacientsCount;
 
+        private int _doctorsCount = 0;
         public int DoctorsCount
         {
             get => _doctorsCount;
             set { _doctorsCount = value; OnPropertyChanged(); }
         }
 
+        private int _pacientsCount = 0;
         public int PacientsCount
         {
             get => _pacientsCount;

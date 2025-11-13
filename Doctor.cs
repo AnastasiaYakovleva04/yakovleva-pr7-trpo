@@ -8,6 +8,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -144,13 +145,13 @@ namespace yakovleva_pr7
         }
 
         //добавить пациента
-        public Pacient AddPacient(string name, string surname, string patronimic, DateTime bd, DateTime lastAppointment, int lastDoc, string diagnosis, string recomendations)
+        public Pacient AddPacient(string name, string surname, string patronimic, string phone, DateTime bd)
         {
-            if (name == "" || surname == "" || patronimic == "" || diagnosis == "" || recomendations == "")
+            if (name == "" || surname == "" || patronimic == "" || phone == "")
                 throw new ArgumentException("Все поля должны быть заполнены");
 
-            if (bd > lastAppointment)
-                throw new ArgumentException("Дата рождения не должна быть позже последнего визита");
+            if (!Pacient.regexPhone.IsMatch(phone))
+                throw new ArgumentException("Поле номер телефона должен быть формата 'X (XXX) XXX-XX-XX'");
 
             Pacient pacient = new Pacient();
             int id;
@@ -160,17 +161,32 @@ namespace yakovleva_pr7
             pacient.Name = name;
             pacient.Surname = surname;
             pacient.Patronimic = patronimic;
+            pacient.PhoneNumber = phone;
             pacient.Birthday = bd;
-            pacient.LastDoctor = lastDoc;
-            pacient.LastAppointment = lastAppointment;
-            pacient.Diagnosis = diagnosis;
-            pacient.Recomendations = recomendations;
             pacient.pacients[id] = pacient;
 
             var jsonString = JsonSerializer.Serialize(pacient);
-            var path = Path.Combine("pacients", $"P_{pacient.Id}.json");
+            var path = Path.Combine("Pacients", $"P_{pacient.Id}.json");
             File.WriteAllText(path, jsonString, Encoding.UTF8);
             return pacient;
+        }
+
+        public void Addmission(Pacient pac, DateTime date, int docId, string diagnosis, string recommendations)
+        {
+            if (diagnosis == "" || recommendations == "")
+                throw new ArgumentException("Все поля должны быть заполнены");
+
+            pac.AppointmentStories.Add(new AppointmentStory
+            {
+                Date = date,
+                DoctorId = docId,
+                Diagnosis = diagnosis,
+                Recommendations = recommendations
+            });
+            
+            var jsonString = JsonSerializer.Serialize(pac);
+            var path = Path.Combine("Pacients", $"P_{pac.Id}.json");
+            File.WriteAllText(path, jsonString, Encoding.UTF8);
         }
     }
 }

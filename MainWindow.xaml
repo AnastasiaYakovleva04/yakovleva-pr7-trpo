@@ -6,10 +6,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:yakovleva_pr7"
         mc:Ignorable="d"
-        Title="MainWindow" Width="800"
+        Title="MainWindow" Width="800" Height="400"
         Padding="5">
 
     <Grid>
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    </Grid>
+
+    <!--<Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -103,15 +107,12 @@
 
 
 
-        <Grid x:Name="AddPacPanel" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3">
+        <Grid x:Name="AddPacPanel" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -123,17 +124,12 @@
             <Label Margin="2" Content="Фамилия:" Grid.Row="1" Grid.Column="0"/>
             <Label Margin="2" Content="Отчество:" Grid.Row="2" Grid.Column="0"/>
             <Label Margin="2" Content="Дата рождения:" Grid.Row="3" Grid.Column="0"/>
-            <Label Margin="2" Content="Последний визит:" Grid.Row="4" Grid.Column="0"/>
-            <Label Margin="2" Content="Диагноз:" Grid.Row="5" Grid.Column="0"/>
-            <Label Margin="2" Content="Рекоммендации:" Grid.Row="6" Grid.Column="0"/>
 
             <TextBox Text="{Binding Name, Mode=TwoWay}" Margin="2" Grid.Row="0" Grid.Column="1" />
             <TextBox Text="{Binding Surname, Mode=TwoWay}" Margin="2" Grid.Row="1" Grid.Column="1" />
             <TextBox Text="{Binding Patronimic, Mode=TwoWay}" Margin="2" Grid.Row="2" Grid.Column="1" />
             <DatePicker SelectedDate="{Binding Birthday, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Margin="2" Grid.Row="3" Grid.Column="1"/>
-            <DatePicker SelectedDate="{Binding LastAppointment, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Margin="2" Grid.Row="4" Grid.Column="1"/>
-            <TextBox Text="{Binding Diagnosis, Mode=TwoWay}" Margin="2" Grid.Row="5" Grid.Column="1"/>
-            <TextBox Text="{Binding Recomendations, Mode=TwoWay}" Margin="2" Grid.Row="6" Grid.Column="1"/>
+            
 
             <Button Name="AddPacientBtn" Margin="2" Grid.ColumnSpan="2" Grid.Row="7" Content="Добавить пациента" Click="AddPacientBtn_Click"/>
         </Grid>
@@ -179,10 +175,26 @@
             <Label Margin="2" Content="{Binding Surname, Mode=OneWay}"/>
             <Label Margin="2" Content="{Binding Patronimic, Mode=OneWay}"/>
             <Label Margin="2" Content="{Binding Birthday, Mode=OneWay}"/>
-            <Label Margin="2" Content="{Binding LastAppointment, Mode=OneWay}"/>
             <Label Margin="2" Content="{Binding LastDoctor, Mode=OneWay}"/>
-            <Label Margin="2" Content="{Binding Diagnosis, Mode=OneWay}"/>
-            <Label Margin="2" Content="{Binding Recomendations, Mode=OneWay}"/>
+            <Grid x:Name="AdmissionPanel">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Margin="2" Content="Последний визит: "/>
+                <DatePicker Grid.Row="0" Grid.Column="1" SelectedDate="{Binding LastAppointment, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Margin="2"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Margin="2" Content="Диагноз: "/>
+                <TextBox Grid.Row="1" Grid.Column="1"  Text="{Binding Diagnosis, Mode=TwoWay}" Margin="2"/>
+
+                <Label Grid.Row="3" Grid.Column="0"  Margin="2" Content="Рекоммендации: "/>
+                <TextBox Grid.Row="3" Grid.Column="1"  Text="{Binding Recomendations, Mode=TwoWay}" Margin="2"/>
+            </Grid>
         </StackPanel>
 
 
@@ -192,5 +204,5 @@
             <Label Margin="2" Content="Пациентов:"/>
             <Label Margin="2" Content="{Binding PacientsCount}"/>
         </StackPanel>
-    </Grid>
+    </Grid>-->
 </Window>

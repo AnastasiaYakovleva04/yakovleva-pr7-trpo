@@ -1,0 +1,90 @@
+﻿<Page x:Class="yakovleva_pr7.Pages.AddmissionPacientPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:yakovleva_pr7.Pages"
+      xmlns:system="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddmissionPacientPage"
+      Background="White">
+
+    <Grid Width="600" Height="250">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Name="PacInfoPanel" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="2" Content="Фамилия"/>
+                <Label Margin="2" Content="{Binding Surname, Mode=OneWay}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="2" Content="Имя"/>
+                <Label Margin="2" Content="{Binding Name, Mode=OneWay}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="2" Content="Отчество"/>
+                <Label Margin="2" Content="{Binding Patronimic, Mode=OneWay}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Margin="2" Content="Дата рождения"/>
+                <Label Margin="2" Content="{Binding Birthday, Mode=OneWay}"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <Label Grid.Row="1" Grid.Column="0" Margin="2" Content="Дата: "/>
+        <Label Grid.Row="2" Grid.Column="0" Margin="2" Content="Диагноз: "/>
+        <Label Grid.Row="3" Grid.Column="0"  Margin="2" Content="Рекоммендации: "/>
+        
+        <Grid x:Name="AddmissionPanel" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <DatePicker Grid.Row="0"  SelectedDate="{Binding Date, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Margin="2"/>
+            <TextBox Grid.Row="1" Text="{Binding Diagnosis, Mode=TwoWay}" Margin="2"/>
+            <TextBox Grid.Row="2" Text="{Binding Recommendations, Mode=TwoWay}" Margin="2"/>
+        </Grid>
+        
+        <Button x:Name="BackBtn" Grid.Row="4" Grid.Column="0"  Content="Назад" Margin="2" Click="BackBtn_Click"/>
+        <Button x:Name="SaveAddmissionBtn" Grid.Row="4" Grid.Column="1"  Content="Сохранить" Margin="2" Click="SaveAddmissionBtn_Click"/>
+
+
+        <ListView ItemsSource="{Binding PacientAppointmentStory}" Grid.Column="2" Grid.RowSpan="5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="PacInfoPanel" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Margin="2" Content="Дата"/>
+                            <Label Margin="2" Content="{Binding Date, Mode=OneWay}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Margin="2" Content="ID врача"/>
+                            <Label Margin="2" Content="{Binding DoctorId, Mode=OneWay}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Margin="2" Content="Диагноз"/>
+                            <Label Margin="2" Content="{Binding Diagnosis, Mode=OneWay}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Margin="2" Content="Рекоммендации"/>
+                            <Label Margin="2" Content="{Binding Recommendations, Mode=OneWay}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
