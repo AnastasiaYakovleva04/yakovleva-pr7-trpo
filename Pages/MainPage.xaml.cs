@@ -25,16 +25,20 @@ namespace yakovleva_pr7.Pages
         public Pacient? SelectedPacient { get; set; }
         Doctor doc;
         Pacient pac;
+        SystemStatus sys { get; set; } = new();
         public MainPage(Doctor doc)
         {
             InitializeComponent();
             this.doc = doc;
             pac = new Pacient();
+
+            sys.UpdateCounts();
             pac.LoadPacients();
             foreach (Pacient pacient in pac.pacients.Values)
                 Pacients.Add(pacient);
             DataContext = this;
             DocInfoPanel.DataContext = doc;
+            SystemStatusPanel.DataContext = sys;
         }
 
         private void AddPacientBtn_Click(object sender, RoutedEventArgs e)

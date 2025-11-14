@@ -33,8 +33,7 @@ namespace yakovleva_pr7.Pages
             this.pac = pac;
             pacAS = new AppointmentStory();
 
-            foreach (AppointmentStory appointment in pac.AppointmentStories)
-                PacientAppointmentStory.Add(appointment);
+            PacientAppointmentStory = pac.AppointmentStories;
 
             DataContext = this;
             PacInfoPanel.DataContext = pac;

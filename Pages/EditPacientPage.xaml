@@ -22,6 +22,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Label Content="Имя:" Grid.Row="0" Grid.Column="0"/>
@@ -36,7 +37,8 @@
         <DatePicker SelectedDate="{Binding Birthday, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Margin="2" Grid.Row="3" Grid.Column="1"/>
         <TextBox Text="{Binding PhoneNumber, Mode=TwoWay}" Margin="2" Grid.Row="4" Grid.Column="1"/>
         
-        <Button Name="ResetPacientBtn" Margin="2" Grid.Row="5" Content="Сбросить" Click="ResetPacientBtn_Click"/>
-        <Button Name="SaveChangesPacientBtn" Margin="2" Grid.Row="5" Grid.Column="1" Content="Сохранить" Click="SaveChangesPacientBtn_Click"/>
+        <Button Name="ResetPacientBtn" Margin="2" Grid.Row="5" Grid.Column="1" Content="Сбросить" Click="ResetPacientBtn_Click"/>
+        <Button Name="BackBtn" Margin="2" Grid.Row="5" Content="Назад" Click="BackBtn_Click"/>
+        <Button Name="SaveChangesPacientBtn" Margin="2" Grid.Row="6" Grid.ColumnSpan="2" Content="Сохранить" Click="SaveChangesPacientBtn_Click"/>
     </Grid>
 </Page>

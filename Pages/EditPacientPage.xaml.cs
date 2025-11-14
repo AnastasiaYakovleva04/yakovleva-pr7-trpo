@@ -38,6 +38,7 @@ namespace yakovleva_pr7.Pages
                 Surname = pac.Surname,
                 Patronimic = pac.Patronimic,
                 Birthday = pac.Birthday,
+                PhoneNumber = pac.PhoneNumber,
             };
 
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace yakovleva_pr7.Pages
                 _originalPac.Surname = _editingPac.Surname;
                 _originalPac.Patronimic = _editingPac.Patronimic;
                 _originalPac.Birthday = _editingPac.Birthday;
+                _originalPac.PhoneNumber = _editingPac.PhoneNumber;
 
                 _originalPac.SaveChanges();
 
@@ -67,6 +69,10 @@ namespace yakovleva_pr7.Pages
         private void ResetPacientBtn_Click(object sender, RoutedEventArgs e)
         {
             _editingPac.Reset();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
             NavigationService.GoBack();
         }
     }

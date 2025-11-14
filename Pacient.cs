@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -63,7 +64,7 @@ namespace yakovleva_pr7
         }
 
         public Dictionary<int, Pacient> pacients = new Dictionary<int, Pacient>();
-        public List<AppointmentStory> AppointmentStories { get; set; } = new List<AppointmentStory>();
+        public ObservableCollection<AppointmentStory> AppointmentStories { get; set; } = new ObservableCollection<AppointmentStory>();
         public Random rnd = new Random();
         public static Regex regexPhone = new Regex(@"^(\+7|8) \(\d{3}\) \d{3}-\d{2}-\d{2}$");
 
@@ -119,6 +120,7 @@ namespace yakovleva_pr7
         {
             Name = Surname = Patronimic = "";
             Birthday = DateTime.MinValue;
+            PhoneNumber = "";
         }
     }
 }
