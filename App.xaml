@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:yakovleva_pr7"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Theme/Colors.xaml"/>
+                <ResourceDictionary Source="/Styles/UI/UIElements.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

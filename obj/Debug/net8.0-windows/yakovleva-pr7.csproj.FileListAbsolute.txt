@@ -31,3 +31,8 @@ C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\obj\Debug\ne
 C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\obj\Debug\net8.0-windows\Pages\EditPacientPage.g.cs
 C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\obj\Debug\net8.0-windows\Pages\AddmissionPacientPage.baml
 C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\obj\Debug\net8.0-windows\Pages\EditPacientPage.baml
+C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\obj\Debug\net8.0-windows\Styles\Theme\Colors.baml
+C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\obj\Debug\net8.0-windows\App.baml
+C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\obj\Debug\net8.0-windows\Styles\UI\UIElements.baml
+C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\bin\Debug\net8.0-windows\yakovleva-pr7.dll.config
+C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\obj\Debug\net8.0-windows\Styles\Theme\DarkTheme.baml

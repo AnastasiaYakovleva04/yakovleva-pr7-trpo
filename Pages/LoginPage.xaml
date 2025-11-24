@@ -5,12 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:yakovleva_pr7.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="LoginPage"
-      Background="White">
+      Title="LoginPage">
 
 
-    <Grid x:Name="LoginPanel" Grid.Column="1"  Width="300" Height="100">
+    <Grid x:Name="LoginPanel" Grid.Column="1"  Width="300" Height="120">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -21,13 +19,13 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label Margin="2" Content="ID:" Grid.Row="0" Grid.Column="0"/>
-        <Label Margin="2" Content="Пароль:" Grid.Row="1" Grid.Column="0"/>
+        <Label Style="{DynamicResource Lable}" Content="ID:" Grid.Row="0" Grid.Column="0"/>
+        <Label Style="{DynamicResource Lable}" Content="Пароль:" Grid.Row="1" Grid.Column="0"/>
 
-        <TextBox Text="{Binding Id, Mode=OneWayToSource}" Margin="2" Grid.Row="0" Grid.Column="1" MaxLength="5"/>
-        <TextBox Text="{Binding Password, Mode=OneWayToSource}" Margin="2" Grid.Row="1" Grid.Column="1" />
+        <TextBox Text="{Binding Id, Mode=OneWayToSource}" Style="{DynamicResource Textbox}" Grid.Row="0" Grid.Column="1" MaxLength="5"/>
+        <TextBox Text="{Binding Password, Mode=OneWayToSource}" Style="{DynamicResource Textbox}" Grid.Row="1" Grid.Column="1" />
 
-        <Button Name="RegBtn" Margin="2" Grid.Row="2" Grid.Column="0" Content="Регистрация" Click="RegBtn_Click"/>
-        <Button Name="LoginBtn" Margin="2" Grid.Row="2" Grid.Column="1" Content="Вход" Click="LoginBtn_Click"/>
+        <Button Name="RegBtn" Grid.Row="2" Grid.Column="0" Content="Регистрация" Click="RegBtn_Click" Style="{DynamicResource StrokeButton}"/>
+        <Button Name="LoginBtn" Grid.Row="2" Grid.Column="1" Content="Вход" Click="LoginBtn_Click" Style="{DynamicResource DefaultButton}"/>
     </Grid>
 </Page>

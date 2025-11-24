@@ -6,11 +6,9 @@
       xmlns:local="clr-namespace:yakovleva_pr7.Pages"
       xmlns:system="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="EditPacientPage"
-      Background="White">
+      Title="EditPacientPage">
 
-    <Grid x:Name="EditPacPanel" Width="300" Height="200" >
+    <Grid x:Name="EditPacPanel" Width="300" Height="300">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -25,20 +23,20 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label Content="Имя:" Grid.Row="0" Grid.Column="0"/>
-        <Label Content="Фамилия:" Grid.Row="1" Grid.Column="0"/>
-        <Label Content="Отчество:" Grid.Row="2" Grid.Column="0"/>
-        <Label Content="Дата рождения:" Grid.Row="3" Grid.Column="0"/>
-        <Label Margin="2" Content="Номер телефона:" Grid.Row="4" Grid.Column="0"/>
+        <Label Content="Имя:" Grid.Row="0" Grid.Column="0" Style="{DynamicResource Lable}"/>
+        <Label Content="Фамилия:" Grid.Row="1" Grid.Column="0" Style="{DynamicResource Lable}"/>
+        <Label Content="Отчество:" Grid.Row="2" Grid.Column="0" Style="{DynamicResource Lable}"/>
+        <Label Content="Дата рождения:" Grid.Row="3" Grid.Column="0" Style="{DynamicResource Lable}"/>
+        <Label Content="Номер телефона:" Grid.Row="4" Grid.Column="0" Style="{DynamicResource Lable}"/>
 
-        <TextBox Text="{Binding Name, Mode=TwoWay}" Margin="2" Grid.Row="0" Grid.Column="1" />
-        <TextBox Text="{Binding Surname, Mode=TwoWay}" Margin="2" Grid.Row="1" Grid.Column="1" />
-        <TextBox Text="{Binding Patronimic, Mode=TwoWay}" Margin="2" Grid.Row="2" Grid.Column="1" />
-        <DatePicker SelectedDate="{Binding Birthday, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Margin="2" Grid.Row="3" Grid.Column="1"/>
-        <TextBox Text="{Binding PhoneNumber, Mode=TwoWay}" Margin="2" Grid.Row="4" Grid.Column="1"/>
-        
-        <Button Name="ResetPacientBtn" Margin="2" Grid.Row="5" Grid.Column="1" Content="Сбросить" Click="ResetPacientBtn_Click"/>
-        <Button Name="BackBtn" Margin="2" Grid.Row="5" Content="Назад" Click="BackBtn_Click"/>
-        <Button Name="SaveChangesPacientBtn" Margin="2" Grid.Row="6" Grid.ColumnSpan="2" Content="Сохранить" Click="SaveChangesPacientBtn_Click"/>
+        <TextBox Text="{Binding Name, Mode=TwoWay}" Style="{DynamicResource Textbox}" Grid.Row="0" Grid.Column="1" />
+        <TextBox Text="{Binding Surname, Mode=TwoWay}" Style="{DynamicResource Textbox}" Grid.Row="1" Grid.Column="1" />
+        <TextBox Text="{Binding Patronimic, Mode=TwoWay}" Style="{DynamicResource Textbox}" Grid.Row="2" Grid.Column="1" />
+        <DatePicker SelectedDate="{Binding Birthday, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Style="{DynamicResource Datepicker}" Grid.Row="3" Grid.Column="1"/>
+        <TextBox Text="{Binding PhoneNumber, Mode=TwoWay}" Style="{DynamicResource Textbox}" Grid.Row="4" Grid.Column="1"/>
+
+        <Button Name="ResetPacientBtn" Style="{DynamicResource StrokeButton}" Margin="2" Grid.Row="5" Grid.Column="1" Content="Сбросить" Click="ResetPacientBtn_Click"/>
+        <Button Name="BackBtn" Style="{DynamicResource StrokeButton}" Grid.Row="5" Content="Назад" Click="BackBtn_Click"/>
+        <Button Name="SaveChangesPacientBtn" Style="{DynamicResource DefaultButton}" Margin="2" Grid.Row="6" Grid.ColumnSpan="2" Content="Сохранить" Click="SaveChangesPacientBtn_Click" Width="296"/>
     </Grid>
 </Page>

@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pacient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pacient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\styles\\ui\\uielements.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:styles\\ui\\uielements.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pages\\editpacientpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pages\\editpacientpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pages\\addmissionpacientpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pages\\addmissionpacientpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pages\\registrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pages\\registrationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pages\\addpacientpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|solutionrelative:pages\\addpacientpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34D37522-1B3A-406E-ABB0-CE0F128E2E36}|yakovleva-pr7.csproj|c:\\users\\\u0430\u0434\u043C\u0438\u043D\\documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\c#\\yakovleva-pr7\\pages\\editpacientpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -26,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +50,94 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddPacientPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\AddPacientPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\AddPacientPage.xaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\AddPacientPage.xaml",
+              "RelativeToolTip": "Pages\\AddPacientPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T08:44:18.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\LoginPage.xaml",
+              "RelativeToolTip": "Pages\\LoginPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T08:44:15.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegistrationPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\RegistrationPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\RegistrationPage.xaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\RegistrationPage.xaml",
+              "RelativeToolTip": "Pages\\RegistrationPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T08:43:12.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\MainPage.xaml",
+              "RelativeToolTip": "Pages\\MainPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T08:22:09.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T07:14:53.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UIElements.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Styles\\UI\\UIElements.xaml",
+              "RelativeDocumentMoniker": "Styles\\UI\\UIElements.xaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Styles\\UI\\UIElements.xaml",
+              "RelativeToolTip": "Styles\\UI\\UIElements.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-20T15:57:28.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AddmissionPacientPage.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\AddmissionPacientPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\AddmissionPacientPage.xaml",
+              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\AddmissionPacientPage.xaml",
+              "RelativeToolTip": "Pages\\AddmissionPacientPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T08:44:19.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "EditPacientPage.xaml",
               "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\EditPacientPage.xaml",
               "RelativeDocumentMoniker": "Pages\\EditPacientPage.xaml",
               "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\EditPacientPage.xaml",
               "RelativeToolTip": "Pages\\EditPacientPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-14T06:06:03.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EditPacientPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\EditPacientPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\EditPacientPage.xaml.cs",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\EditPacientPage.xaml.cs",
-              "RelativeToolTip": "Pages\\EditPacientPage.xaml.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T06:07:35.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Pacient.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pacient.cs",
-              "RelativeDocumentMoniker": "Pacient.cs",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pacient.cs",
-              "RelativeToolTip": "Pacient.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAUwGEAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T06:04:01.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\\u0410\u0434\u043C\u0438\u043D\\Documents\\\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043A\u0438\\C#\\yakovleva-pr7\\Pages\\MainPage.xaml.cs",
-              "RelativeToolTip": "Pages\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T05:58:22.308Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-21T08:44:17.085Z"
             }
           ]
         }

@@ -16,15 +16,14 @@ namespace yakovleva_pr7
 {
     public partial class MainWindow : Window
     {
-        //public Doctor doc;
-        //public Pacient pacAdd;  
-        //public Pacient pacWork;
-        //public SystemStatus sys;
-
         public MainWindow()
         {
             InitializeComponent();
             MainFrame.Navigate(new LoginPage());
+        }
+        private void ChangeTheme_Click(object sender, RoutedEventArgs e)
+        {
+            ThemeHelper.Toggle();
         }
     }
 }

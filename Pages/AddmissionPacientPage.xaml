@@ -6,11 +6,9 @@
       xmlns:local="clr-namespace:yakovleva_pr7.Pages"
       xmlns:system="clr-namespace:System;assembly=mscorlib"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddmissionPacientPage"
-      Background="White">
+      Title="AddmissionPacientPage">
 
-    <Grid Width="600" Height="250">
+    <Grid Width="600" Height="290">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -26,26 +24,26 @@
         
         <StackPanel Name="PacInfoPanel" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <Label Margin="2" Content="Фамилия"/>
-                <Label Margin="2" Content="{Binding Surname, Mode=OneWay}"/>
+                <Label Content="Фамилия" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding Surname, Mode=OneWay}" Style="{DynamicResource Lable}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Margin="2" Content="Имя"/>
-                <Label Margin="2" Content="{Binding Name, Mode=OneWay}"/>
+                <Label Content="Имя" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding Name, Mode=OneWay}" Style="{DynamicResource Lable}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Margin="2" Content="Отчество"/>
-                <Label Margin="2" Content="{Binding Patronimic, Mode=OneWay}"/>
+                <Label Content="Отчество" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding Patronimic, Mode=OneWay}" Style="{DynamicResource Lable}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Margin="2" Content="Дата рождения"/>
-                <Label Margin="2" Content="{Binding Birthday, Mode=OneWay}"/>
+                <Label  Content="Дата рождения" Style="{DynamicResource Lable}"/>
+                <Label  Content="{Binding Birthday, Mode=OneWay}" Style="{DynamicResource Lable}"/>
             </StackPanel>
         </StackPanel>
-        
-        <Label Grid.Row="1" Grid.Column="0" Margin="2" Content="Дата: "/>
-        <Label Grid.Row="2" Grid.Column="0" Margin="2" Content="Диагноз: "/>
-        <Label Grid.Row="3" Grid.Column="0"  Margin="2" Content="Рекоммендации: "/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Дата: " Style="{DynamicResource Lable}"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Диагноз: " Style="{DynamicResource Lable}"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Рекоммендации: " Style="{DynamicResource Lable}"/>
         
         <Grid x:Name="AddmissionPanel" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
             <Grid.RowDefinitions>
@@ -53,34 +51,38 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <DatePicker Grid.Row="0"  SelectedDate="{Binding Date, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Margin="2"/>
-            <TextBox Grid.Row="1" Text="{Binding Diagnosis, Mode=TwoWay}" Margin="2"/>
-            <TextBox Grid.Row="2" Text="{Binding Recommendations, Mode=TwoWay}" Margin="2"/>
+            <DatePicker Grid.Row="0"  SelectedDate="{Binding Date, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Style="{DynamicResource Datepicker}"/>
+            <TextBox Grid.Row="1" Text="{Binding Diagnosis, Mode=TwoWay}" Style="{DynamicResource Textbox}"/>
+            <TextBox Grid.Row="2" Text="{Binding Recommendations, Mode=TwoWay}" Style="{DynamicResource Textbox}"/>
         </Grid>
-        
-        <Button x:Name="BackBtn" Grid.Row="4" Grid.Column="0"  Content="Назад" Margin="2" Click="BackBtn_Click"/>
-        <Button x:Name="SaveAddmissionBtn" Grid.Row="4" Grid.Column="1"  Content="Сохранить" Margin="2" Click="SaveAddmissionBtn_Click"/>
+
+        <Button x:Name="BackBtn" Grid.Row="4" Grid.Column="0"  Content="Назад" Style="{DynamicResource StrokeButton}" Click="BackBtn_Click"/>
+        <Button x:Name="SaveAddmissionBtn" Grid.Row="4" Grid.Column="1"  Content="Сохранить" Style="{DynamicResource DefaultButton}" Click="SaveAddmissionBtn_Click"/>
 
 
-        <ListView ItemsSource="{Binding PacientAppointmentStory}" Grid.Column="2" Grid.RowSpan="5">
+        <ListView ItemsSource="{Binding PacientAppointmentStory}" Grid.Column="2" Grid.RowSpan="5" Style="{DynamicResource Listview}" ItemContainerStyle="{DynamicResource ListviewItem}">
+            <ListView.Resources>
+                <Style TargetType="ScrollBar" BasedOn="{StaticResource Scrollbar}"/>
+            </ListView.Resources>
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel x:Name="PacInfoPanel" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="Дата"/>
-                            <Label Margin="2" Content="{Binding Date, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Дата"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding Date, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="ID врача"/>
-                            <Label Margin="2" Content="{Binding DoctorId, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="ID врача"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding DoctorId, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="Диагноз"/>
-                            <Label Margin="2" Content="{Binding Diagnosis, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Диагноз"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding Diagnosis, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="Рекоммендации"/>
-                            <Label Margin="2" Content="{Binding Recommendations, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Рекоммендации"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding Recommendations, Mode=OneWay}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>

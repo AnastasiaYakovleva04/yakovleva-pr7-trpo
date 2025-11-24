@@ -5,61 +5,66 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:system="clr-namespace:System;assembly=mscorlib"
       xmlns:local="clr-namespace:yakovleva_pr7.Pages"
-      mc:Ignorable="d"  d:DesignWidth="800"
-      Title="MainPage"
-      Background="White">
+      mc:Ignorable="d" 
+      Title="MainPage">
 
-    <StackPanel Orientation="Vertical">
-        <StackPanel x:Name="DocInfoPanel" Orientation="Horizontal"  Margin="2" Grid.Row="3" Grid.Column="0">
-            <Label Margin="2" Content="ID:" />
-            <Label Margin="2" Content="{Binding Id, Mode=OneWay}" />
-            <Label Margin="2" Content="{Binding Surname, Mode=OneWay}" />
-            <Label Margin="2" Content="{Binding Name, Mode=OneWay}" />
-            <Label Margin="2" Content="{Binding Patronimic, Mode=OneWay}" />
-            <Label Margin="2" Content="{Binding Specialization, Mode=OneWay}" />
-        </StackPanel>
+    <StackPanel>
+        <Border Style="{DynamicResource Bordr}">
+            <StackPanel x:Name="DocInfoPanel" Style="{DynamicResource SpecialPanel}" Grid.Row="3" Grid.Column="0">
+                <Label Content="ID:" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding Id, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding Surname, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding Name, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding Patronimic, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding Specialization, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+            </StackPanel>
+        </Border>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="AddPacientBtn" Margin="2"  Content="Создать пациента" Click="AddPacientBtn_Click"></Button>
-            <Button Name="StartAddmissionBtn" Margin="2"  Content="Начать прием" Click="StartAddmissionBtn_Click"></Button>
-            <Button Name="EditPacientBtn" Margin="2"  Content="Изменить информацию" Click="EditPacientBtn_Click"></Button>
-        </StackPanel>
-
-        <ListView ItemsSource="{Binding Pacients}" SelectedItem="{Binding SelectedPacient}" Height="350">
+        <StackPanel Style="{DynamicResource Panel}" HorizontalAlignment="Center" Height="40">
+            <Button Name="AddPacientBtn" Style="{DynamicResource AddButton}" Click="AddPacientBtn_Click"/>
+            <Button Name="StartAddmissionBtn" Style="{DynamicResource DefaultButton}" Content="Начать прием" Click="StartAddmissionBtn_Click"></Button>
+                <Button Name="EditPacientBtn" Style="{DynamicResource StrokeButton}" Content="Изменить информацию" Click="EditPacientBtn_Click"></Button>
+            </StackPanel>
+        
+        
+        <ListView ItemsSource="{Binding Pacients}" SelectedItem="{Binding SelectedPacient}" Style="{DynamicResource Listview}" ItemContainerStyle="{DynamicResource ListviewItem}">
+            <ListView.Resources>
+                <Style TargetType="ScrollBar" BasedOn="{StaticResource Scrollbar}"/>
+            </ListView.Resources>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel x:Name="PacInfoPanel" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+                    <StackPanel x:Name="PacInfoPanel" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="Фамилия"/>
-                            <Label Margin="2" Content="{Binding Surname, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Фамилия"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding Surname, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="Имя"/>
-                            <Label Margin="2" Content="{Binding Name, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Имя"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding Name, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="Отчество"/>
-                            <Label Margin="2" Content="{Binding Patronimic, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Отчество"/>
+                            <Label  Style="{DynamicResource Lable}" Content="{Binding Patronimic, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="Дата рождения"/>
-                            <Label Margin="2" Content="{Binding Birthday, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Дата рождения"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding Birthday, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Margin="2" Content="Номер телефона"/>
-                            <Label Margin="2" Content="{Binding PhoneNumber, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Номер телефона"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding PhoneNumber, Mode=OneWay}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Orientation="Horizontal">
-            <StackPanel x:Name="SystemStatusPanel" Orientation="Horizontal">
-                <Label Content="Докторов:"/>
-                <Label Content="{Binding DoctorsCount}"/>
+            <StackPanel x:Name="SystemStatusPanel" Style="{DynamicResource Panel}">
+                <Label Content="Докторов:" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding DoctorsCount}" Style="{DynamicResource Lable}"/>
             </StackPanel>
-            <Label Content="Пациентов:"/>
-            <Label Content="{Binding Pacients.Count}"/>
+            <Label Content="Пациентов:" Style="{DynamicResource Lable}"/>
+            <Label Content="{Binding Pacients.Count}" Style="{DynamicResource Lable}"/>
         </StackPanel>
     </StackPanel>
 </Page>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\Админ\Documents\программки\C#\yakovleva-pr7\App.xaml
-7538331178
+10-661450640
 
-16-1391589808
+18-2114038706
 198-2136442823
-MainWindow.xaml;Pages\AddmissionPacientPage.xaml;Pages\AddPacientPage.xaml;Pages\EditPacientPage.xaml;Pages\LoginPage.xaml;Pages\MainPage.xaml;Pages\RegistrationPage.xaml;
+MainWindow.xaml;Pages\AddmissionPacientPage.xaml;Pages\AddPacientPage.xaml;Pages\EditPacientPage.xaml;Pages\LoginPage.xaml;Pages\MainPage.xaml;Pages\RegistrationPage.xaml;Styles\Theme\Colors.xaml;Styles\Theme\DarkTheme.xaml;Styles\UI\UIElements.xaml;
 
 True
 
