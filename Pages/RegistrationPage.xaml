@@ -4,38 +4,157 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:yakovleva_pr7.Pages"
+      xmlns:validators="clr-namespace:yakovleva_pr7.ValidationRules"
       mc:Ignorable="d" 
       Title="RegistrationPage">
 
-    <Grid x:Name="RegPanel" Grid.Column="0" Width="300" Height="250">
+    <Grid x:Name="RegPanel" Grid.Column="0" Width="300" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label Style="{DynamicResource Lable}" Content="Имя:" Grid.Row="0" Grid.Column="0"/>
-        <Label Style="{DynamicResource Lable}" Content="Фамилия:" Grid.Row="1" Grid.Column="0"/>
-        <Label Style="{DynamicResource Lable}" Content="Отчество:" Grid.Row="2" Grid.Column="0"/>
-        <Label Style="{DynamicResource Lable}" Content="Специальность:" Grid.Row="3" Grid.Column="0"/>
-        <Label Style="{DynamicResource Lable}" Content="Пароль:" Grid.Row="4" Grid.Column="0"/>
-        <Label Style="{DynamicResource Lable}" Content="Подтвердите пароль:" Grid.Row="5" Grid.Column="0"/>
+        <Label Style="{DynamicResource Lable}" Content="Фамилия:" Grid.Row="2" Grid.Column="0"/>
+        <Label Style="{DynamicResource Lable}" Content="Отчество:" Grid.Row="4" Grid.Column="0"/>
+        <Label Style="{DynamicResource Lable}" Content="Специальность:" Grid.Row="6" Grid.Column="0"/>
+        <Label Style="{DynamicResource Lable}" Content="Пароль:" Grid.Row="8" Grid.Column="0"/>
+        <Label Style="{DynamicResource Lable}" Content="Подтвердите пароль:" Grid.Row="10" Grid.Column="0"/>
 
-        <TextBox Text="{Binding Name, Mode=TwoWay}" Style="{DynamicResource Textbox}" Grid.Row="0" Grid.Column="1" />
-        <TextBox Text="{Binding Surname, Mode=TwoWay}" Style="{DynamicResource Textbox}" Grid.Row="1" Grid.Column="1" />
-        <TextBox Text="{Binding Patronimic, Mode=TwoWay}" Style="{DynamicResource Textbox}" Grid.Row="2" Grid.Column="1" />
-        <TextBox Text="{Binding Specialization, Mode=TwoWay}" Style="{DynamicResource Textbox}" Grid.Row="3" Grid.Column="1" />
-        <TextBox Text="{Binding Password, Mode=OneWayToSource}" Style="{DynamicResource Textbox}" Grid.Row="4" Grid.Column="1"/>
-        <TextBox Text="{Binding ConfirmPassword, Mode=OneWayToSource}" Style="{DynamicResource Textbox}" Grid.Row="5" Grid.Column="1"/>
 
-        <Button Name="BackBtn" Grid.Row="6" Grid.Column="0" Content="Назад" Click="BackBtn_Click" Style="{DynamicResource StrokeButton}"/>
-        <Button Name="RegBtn" Grid.Column="1" Grid.Row="6" Content="Регистрация" Click="RegBtn_Click" Style="{DynamicResource DefaultButton}"/>
+        <TextBox x:Name="DocNameTextBox" Style="{DynamicResource Textbox}" Grid.Row="0" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validators:IsEmptyRule/>
+                        <validators:OnlyLettersRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ItemsControl Grid.Row="1" Grid.Column="1" Grid.RowSpan="1"
+              Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+              ItemsSource="{Binding ElementName=DocNameTextBox, Path=(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TextBox x:Name="DocSurnameTextBox" Style="{DynamicResource Textbox}" Grid.Row="2" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Surname" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validators:IsEmptyRule/>
+                        <validators:OnlyLettersRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ItemsControl Grid.Row="3" Grid.Column="1" Grid.RowSpan="1"
+                      Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+                      ItemsSource="{Binding ElementName=DocSurnameTextBox, Path=(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TextBox x:Name="DocPatronimicTextBox" Style="{DynamicResource Textbox}" Grid.Row="4" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Patronimic" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validators:IsEmptyRule/>
+                        <validators:OnlyLettersRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ItemsControl Grid.Row="5" Grid.Column="1" Grid.RowSpan="1"
+                      Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+                      ItemsSource="{Binding ElementName=DocPatronimicTextBox, Path=(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TextBox x:Name="DocSpecTextBox" Style="{DynamicResource Textbox}" Grid.Row="6" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Specialization" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validators:IsEmptyRule/>
+                        <validators:OnlyLettersRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ItemsControl Grid.Row="7" Grid.Column="1" Grid.RowSpan="1"
+                      Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+                      ItemsSource="{Binding ElementName=DocSpecTextBox, Path=(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TextBox x:Name="DocPassTextBox" Style="{DynamicResource Textbox}" Grid.Row="8" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="Password" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validators:IsEmptyRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ItemsControl Grid.Row="9" Grid.Column="1" Grid.RowSpan="1"
+                      Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+                      ItemsSource="{Binding ElementName=DocPassTextBox, Path=(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <TextBox x:Name="DocConfPassTextBox" Style="{DynamicResource Textbox}" Grid.Row="10" Grid.Column="1">
+            <TextBox.Text>
+                <Binding Path="ConfirmPassword" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validators:IsEmptyRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ItemsControl Grid.Row="11" Grid.Column="1" Grid.RowSpan="1"
+                      Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+                      ItemsSource="{Binding ElementName=DocConfPassTextBox, Path=(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Button Name="BackBtn" Grid.Row="12" Grid.Column="0" Content="Назад" Click="BackBtn_Click" Style="{DynamicResource StrokeButton}"/>
+        <Button Name="RegBtn" Grid.Column="1" Grid.Row="12" Content="Регистрация" Click="RegBtn_Click" Style="{DynamicResource DefaultButton}"/>
     </Grid>
 </Page>

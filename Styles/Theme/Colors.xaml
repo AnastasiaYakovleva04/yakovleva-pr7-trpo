@@ -6,4 +6,6 @@
     <SolidColorBrush x:Key="LightblueStyle" Color="#eeeffd"/>
     <SolidColorBrush x:Key="WhiteStyle" Color="#fafafd"/>
     <SolidColorBrush x:Key="BlackStyle" Color="#0a0a0a"/>
+    <SolidColorBrush x:Key="ErrorBgStyle" Color="#deb0b0"/>
+    <SolidColorBrush x:Key="ErrorStyle" Color="#960018"/>
 </ResourceDictionary>

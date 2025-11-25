@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
@@ -44,18 +45,19 @@ namespace yakovleva_pr7
         }
 
         private DateTime _birthday = new DateTime(1920, 01, 01);
-        public DateTime Birthday 
+        public DateTime Birthday
         { 
             get => _birthday;
             set { _birthday = value; OnPropertyChanged(); } 
         }
 
-        private string _phoneNumber = "";
-        public string PhoneNumber
+        private long _phoneNumber = 0;
+        public long PhoneNumber
         {
             get => _phoneNumber;
             set { _phoneNumber = value; OnPropertyChanged(); }
         }
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -66,7 +68,7 @@ namespace yakovleva_pr7
         public Dictionary<int, Pacient> pacients = new Dictionary<int, Pacient>();
         public ObservableCollection<AppointmentStory> AppointmentStories { get; set; } = new ObservableCollection<AppointmentStory>();
         public Random rnd = new Random();
-        public static Regex regexPhone = new Regex(@"^(\+7|8) \(\d{3}\) \d{3}-\d{2}-\d{2}$");
+        public static Regex regexPhone = new Regex(@"^(7|8)\d{10}$");
 
         //загрузка пациентов из json файлов
         public void LoadPacients()
@@ -105,8 +107,8 @@ namespace yakovleva_pr7
             if (string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(Surname))
                 throw new ArgumentException("Имя и фамилия обязательны");
 
-            if (!regexPhone.IsMatch(PhoneNumber))
-                throw new ArgumentException("Поле номер телефона должен быть формата 'X (XXX) XXX-XX-XX'");
+            if (!regexPhone.IsMatch(PhoneNumber.ToString()))
+                throw new ArgumentException("Поле номер телефона должен начинаться с 7 или 8 и содержать только цифры");
 
             pacients[Id] = this;
 
@@ -120,7 +122,7 @@ namespace yakovleva_pr7
         {
             Name = Surname = Patronimic = "";
             Birthday = DateTime.MinValue;
-            PhoneNumber = "";
+            PhoneNumber = 0;
         }
     }
 }

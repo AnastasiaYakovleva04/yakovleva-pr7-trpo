@@ -5,8 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:system="clr-namespace:System;assembly=mscorlib"
       xmlns:local="clr-namespace:yakovleva_pr7.Pages"
+      xmlns:converters="clr-namespace:yakovleva_pr7.Converters"
       mc:Ignorable="d" 
       Title="MainPage">
+
+    <Page.Resources>
+        <converters:AgeConverter x:Key="AgeConverter"/>
+        <converters:AdultConverter x:Key="AdultConverter"/>
+    </Page.Resources>
 
     <StackPanel>
         <Border Style="{DynamicResource Bordr}">
@@ -21,10 +27,11 @@
         </Border>
 
         <StackPanel Style="{DynamicResource Panel}" HorizontalAlignment="Center" Height="40">
-            <Button Name="AddPacientBtn" Style="{DynamicResource AddButton}" Click="AddPacientBtn_Click"/>
+            <Button Name="AddPacientBtn" Style="{DynamicResource AddButton}" Content="Добавить пациента" Click="AddPacientBtn_Click"/>
             <Button Name="StartAddmissionBtn" Style="{DynamicResource DefaultButton}" Content="Начать прием" Click="StartAddmissionBtn_Click"></Button>
-                <Button Name="EditPacientBtn" Style="{DynamicResource StrokeButton}" Content="Изменить информацию" Click="EditPacientBtn_Click"></Button>
-            </StackPanel>
+            <Button Name="EditPacientBtn" Style="{DynamicResource StrokeButton}" Content="Изменить" Click="EditPacientBtn_Click"></Button>
+            <!--<Button Name="DeletePacientBtn" Style="{DynamicResource StrokeButton}" Content="Удалить"></Button>-->
+        </StackPanel>
         
         
         <ListView ItemsSource="{Binding Pacients}" SelectedItem="{Binding SelectedPacient}" Style="{DynamicResource Listview}" ItemContainerStyle="{DynamicResource ListviewItem}">
@@ -52,7 +59,15 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <Label Style="{DynamicResource Lable}" Content="Номер телефона"/>
-                            <Label Style="{DynamicResource Lable}" Content="{Binding PhoneNumber, Mode=OneWay}"/>
+                            <Label Style="{DynamicResource Lable}" Content="{Binding PhoneNumber, Mode=OneWay, StringFormat={}{0:# (###) ### ## ##}}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Возраст:" Style="{DynamicResource Lable}"/>
+                            <Label Content="{Binding Birthday, Mode=OneWay, Converter={StaticResource AgeConverter}}" Style="{DynamicResource Lable}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Статус:" Style="{DynamicResource Lable}"/>
+                            <Label Content="{Binding Birthday, Mode=OneWay, Converter={StaticResource AdultConverter}}" Style="{DynamicResource Lable}"/>
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>

@@ -74,9 +74,42 @@
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="15"
                         Padding="{TemplateBinding Padding}">
-                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <Label Content="+" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{TemplateBinding Foreground}"/>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                             <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Label Content="+" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{TemplateBinding Foreground}" Padding="2,0"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource DeepBlueStyle}"/>
+                <Setter Property="Foreground" Value="{DynamicResource WhiteStyle}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource DeepBlueStyle}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource DarkblueStyle}"/>
+                <Setter Property="Foreground" Value="{DynamicResource WhiteStyle}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource DarkblueStyle}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Button" x:Key="DeleteButton" BasedOn="{StaticResource StrokeButton}">
+        <Setter Property="FontFamily" Value="Segoe UI Emoji"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="15"
+                            Padding="{TemplateBinding Padding}">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Label Content="🗑️" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="2,0" Width="5" Height="5"/>
                         </StackPanel>
                     </Border>
                 </ControlTemplate>
@@ -124,7 +157,26 @@
             </Setter.Value>
         </Setter>
 
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+
         <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ErrorStyle}"/>
+                <Setter Property="Background" Value="{DynamicResource ErrorBgStyle}"/>
+                <Setter Property="ToolTip" 
+                    Value="{Binding RelativeSource={RelativeSource Self}, 
+                    Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+
+            <Trigger Property="Validation.HasError" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ErrorStyle}"/>
+                <Setter Property="Background" Value="{DynamicResource ErrorBgfnStyle}"/>
+                <Setter Property="Foreground" Value="{DynamicResource ErrorStyle}"/>
+                <Setter Property="ToolTip" 
+                    Value="{Binding RelativeSource={RelativeSource Self}, 
+                    Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+            
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{DynamicResource LightblueStyle}"/>
                 <Setter Property="Foreground" Value="{DynamicResource DarkblueStyle}"/>
