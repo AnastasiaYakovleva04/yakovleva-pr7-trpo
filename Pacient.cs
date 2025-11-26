@@ -51,8 +51,8 @@ namespace yakovleva_pr7
             set { _birthday = value; OnPropertyChanged(); } 
         }
 
-        private long _phoneNumber = 0;
-        public long PhoneNumber
+        private double _phoneNumber = 0;
+        public double PhoneNumber
         {
             get => _phoneNumber;
             set { _phoneNumber = value; OnPropertyChanged(); }
@@ -68,7 +68,7 @@ namespace yakovleva_pr7
         public Dictionary<int, Pacient> pacients = new Dictionary<int, Pacient>();
         public ObservableCollection<AppointmentStory> AppointmentStories { get; set; } = new ObservableCollection<AppointmentStory>();
         public Random rnd = new Random();
-        public static Regex regexPhone = new Regex(@"^(7|8)\d{10}$");
+        public static Regex regexPhone = new Regex(@"^\d{10}$");
 
         //загрузка пациентов из json файлов
         public void LoadPacients()
@@ -108,7 +108,7 @@ namespace yakovleva_pr7
                 throw new ArgumentException("Имя и фамилия обязательны");
 
             if (!regexPhone.IsMatch(PhoneNumber.ToString()))
-                throw new ArgumentException("Поле номер телефона должен начинаться с 7 или 8 и содержать только цифры");
+                throw new ArgumentException("Поле номер телефона должен содержать только цифры без 8 в начале");
 
             pacients[Id] = this;
 

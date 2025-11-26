@@ -39,7 +39,7 @@ namespace yakovleva_pr7.Pages
         {
             try
             {
-                var newPac = doc.AddPacient(pac.Name, pac.Surname, pac.Patronimic, pac.PhoneNumber.ToString(), pac.Birthday);
+                var newPac = doc.AddPacient(pac.Name, pac.Surname, pac.Patronimic, pac.PhoneNumber, pac.Birthday);
                 MessageBox.Show($"Пациент добавлен. ID: {newPac.Id}", "Успешно");
 
                 _pacientList.Add(newPac);

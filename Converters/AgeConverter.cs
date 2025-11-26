@@ -16,7 +16,8 @@ namespace yakovleva_pr7.Converters
             {
                 var today = DateTime.Today;
                 var age = today.Year - birthday.Year;
-                if (birthday.Date > today.AddYears(-age)) age--;
+                if (birthday.Month > today.Month && birthday.Day > today.Day)
+                    age--;
 
                 return age;
             }

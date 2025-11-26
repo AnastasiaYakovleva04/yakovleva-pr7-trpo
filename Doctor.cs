@@ -145,13 +145,13 @@ namespace yakovleva_pr7
         }
 
         //добавить пациента
-        public Pacient AddPacient(string name, string surname, string patronimic, string phone, DateTime bd)
+        public Pacient AddPacient(string name, string surname, string patronimic, double phone, DateTime bd)
         {
-            if (name == "" || surname == "" || patronimic == "" || phone == "")
+            if (name == "" || surname == "" || patronimic == "" || phone == 0)
                 throw new ArgumentException("Все поля должны быть заполнены");
 
             if (!Pacient.regexPhone.IsMatch(phone.ToString()))
-                throw new ArgumentException("Поле номер телефона должен начинаться с 7 или 8 и содержать только цифры");
+                throw new ArgumentException("Поле номер телефона должен содержать только цифры без 8 в начале");
 
             Pacient pacient = new Pacient();
             int id;
@@ -161,7 +161,7 @@ namespace yakovleva_pr7
             pacient.Name = name;
             pacient.Surname = surname;
             pacient.Patronimic = patronimic;
-            pacient.PhoneNumber = long.Parse(phone);
+            pacient.PhoneNumber = phone;
             pacient.Birthday = bd;
             pacient.pacients[id] = pacient;
 

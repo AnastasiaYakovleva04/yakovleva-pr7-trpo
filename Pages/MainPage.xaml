@@ -42,24 +42,24 @@
                 <DataTemplate>
                     <StackPanel x:Name="PacInfoPanel" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="Фамилия"/>
+                            <Label Style="{DynamicResource Lable}" Content="Фамилия:"/>
                             <Label Style="{DynamicResource Lable}" Content="{Binding Surname, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="Имя"/>
+                            <Label Style="{DynamicResource Lable}" Content="Имя:"/>
                             <Label Style="{DynamicResource Lable}" Content="{Binding Name, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="Отчество"/>
+                            <Label Style="{DynamicResource Lable}" Content="Отчество:"/>
                             <Label  Style="{DynamicResource Lable}" Content="{Binding Patronimic, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="Дата рождения"/>
+                            <Label Style="{DynamicResource Lable}" Content="Дата рождения:"/>
                             <Label Style="{DynamicResource Lable}" Content="{Binding Birthday, Mode=OneWay}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="Номер телефона"/>
-                            <Label Style="{DynamicResource Lable}" Content="{Binding PhoneNumber, Mode=OneWay, StringFormat={}{0:# (###) ### ## ##}}"/>
+                            <Label Style="{DynamicResource Lable}" Content="Номер телефона:"/>
+                            <TextBlock Text="{Binding PhoneNumber, Mode=OneWay, StringFormat={}{0:8 (###) ### ## ##}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <Label Content="Возраст:" Style="{DynamicResource Lable}"/>

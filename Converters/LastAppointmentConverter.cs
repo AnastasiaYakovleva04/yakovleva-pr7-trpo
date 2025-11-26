@@ -18,11 +18,8 @@ namespace yakovleva_pr7.Converters
                     return "Первый прием в клинике";
 
                 var lastAppointment = stories.OrderByDescending(s => s.Date).FirstOrDefault();
-                if (lastAppointment != null)
-                {
-                    var days = (DateTime.Now - lastAppointment.Date).Days;
-                    return $"{days} дней назад";
-                }
+                var days = (DateTime.Now - lastAppointment.Date).Days;
+                return $"{days} дней назад";
             }
             return "Первый прием в клинике";
         }

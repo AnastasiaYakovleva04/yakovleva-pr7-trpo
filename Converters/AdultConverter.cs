@@ -16,10 +16,13 @@ namespace yakovleva_pr7.Converters
             {
                 var today = DateTime.Today;
                 var age = today.Year - birthday.Year;
-                if (birthday.Date > today.AddYears(-age)) 
+                if (birthday.Month > today.Month && birthday.Day > today.Day) 
                     age--;
 
-                return age >= 18 ? "совершеннолетний" : "несовершеннолетний";
+                if (age >= 18)
+                    return "совершеннолетний";
+                else
+                    return "несовершеннолетний";
             }
             return "";
         }

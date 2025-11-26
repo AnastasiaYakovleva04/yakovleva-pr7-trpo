@@ -47,7 +47,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Номер телефона:" Style="{DynamicResource Lable}"/>
-                <Label Content="{Binding PhoneNumber, Mode=OneWay, StringFormat={}{0:# (###) ### ## ##}}" Style="{DynamicResource Lable}"/>
+                <TextBlock Text="{Binding PhoneNumber, Mode=OneWay, StringFormat={}{0:8 (###) ### ## ##}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Дата рождения:" Style="{DynamicResource Lable}"/>
@@ -75,6 +75,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            
             <DatePicker Grid.Row="0" SelectedDate="{Binding Date, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Style="{DynamicResource Datepicker}"/>
 
             <TextBox x:Name="DiagnosisTextBox" Style="{DynamicResource Textbox}" Grid.Row="1">
@@ -115,8 +116,6 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-
-            <TextBox Grid.Row="3" Text="{Binding Recommendations, Mode=TwoWay}" Style="{DynamicResource Textbox}"/>
         </Grid>
 
         <Button x:Name="BackBtn" Grid.Row="7" Grid.Column="0"  Content="Назад" Style="{DynamicResource StrokeButton}" Click="BackBtn_Click"/>
