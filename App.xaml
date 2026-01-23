@@ -2,11 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:yakovleva_pr7"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Styles/Theme/Colors.xaml"/>
+                <materialDesign:CustomColorTheme BaseTheme="Light" PrimaryColor="#3A9AD9" SecondaryColor="#2E3B4E" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+
+                <ResourceDictionary Source="/Styles/Theme/LigthTheme.xaml"/>
                 <ResourceDictionary Source="/Styles/UI/UIElements.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

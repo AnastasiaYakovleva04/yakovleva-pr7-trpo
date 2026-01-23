@@ -171,6 +171,7 @@ namespace yakovleva_pr7
             return pacient;
         }
 
+        //прием пациента
         public void Addmission(Pacient pac, DateTime date, int docId, string diagnosis, string recommendations)
         {
             if (diagnosis == "" || recommendations == "")
@@ -188,5 +189,6 @@ namespace yakovleva_pr7
             var path = Path.Combine("Pacients", $"P_{pac.Id}.json");
             File.WriteAllText(path, jsonString, Encoding.UTF8);
         }
+
     }
 }

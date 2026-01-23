@@ -10,7 +10,7 @@ namespace yakovleva_pr7
     static class ThemeHelper
     {
         private static readonly string[] _themePath = {
-            "Styles/Theme/Colors.xaml",
+            "Styles/Theme/LigthTheme.xaml",
             "Styles/Theme/DarkTheme.xaml"
         };
         public static string Current

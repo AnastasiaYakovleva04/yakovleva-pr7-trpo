@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:yakovleva_pr7"
         xmlns:validators="clr-namespace:yakovleva_pr7.ValidationRules"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow"
         Padding="5"
@@ -20,8 +21,15 @@
 
         <Frame Name="MainFrame" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"/>
         <Menu Grid.Column="1" Style="{DynamicResource Menuu}">
-            <MenuItem Header="Настройки" Style="{DynamicResource Menuitem}">
-                <MenuItem Header="Сменить тему" Click="ChangeTheme_Click"/>
+            <MenuItem Style="{DynamicResource Menuitem}">
+                <MenuItem.Icon>
+                    <TextBlock><materialDesign:PackIcon Kind="Settings" Width="18" Height="18"/></TextBlock>
+                </MenuItem.Icon>
+                <MenuItem Click="ChangeTheme_Click">
+                    <MenuItem.Icon>
+                        <TextBlock><materialDesign:PackIcon Name="ThemeIcon" Width="18" Height="18"/></TextBlock>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
     </Grid>

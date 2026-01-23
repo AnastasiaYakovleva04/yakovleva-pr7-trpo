@@ -10,114 +10,117 @@
       mc:Ignorable="d" 
       Title="EditPacientPage">
 
-    <Grid x:Name="EditPacPanel" Width="300"  Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <StackPanel>
+        <Label Content="Редактирование" Style="{DynamicResource Title}"/>
+        <Grid x:Name="EditPacPanel" Width="300"  Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-        <Label Content="Имя:" Grid.Row="0" Grid.Column="0" Style="{DynamicResource Lable}"/>
-        <Label Content="Фамилия:" Grid.Row="2" Grid.Column="0" Style="{DynamicResource Lable}"/>
-        <Label Content="Отчество:" Grid.Row="4" Grid.Column="0" Style="{DynamicResource Lable}"/>
-        <Label Content="Дата рождения:" Grid.Row="6" Grid.Column="0" Style="{DynamicResource Lable}"/>
-        <Label Content="Номер телефона:" Grid.Row="7" Grid.Column="0" Style="{DynamicResource Lable}"/>
+            <Label Content="Имя:" Grid.Row="0" Grid.Column="0" Style="{DynamicResource Lable}"/>
+            <Label Content="Фамилия:" Grid.Row="2" Grid.Column="0" Style="{DynamicResource Lable}"/>
+            <Label Content="Отчество:" Grid.Row="4" Grid.Column="0" Style="{DynamicResource Lable}"/>
+            <Label Content="Дата рождения:" Grid.Row="6" Grid.Column="0" Style="{DynamicResource Lable}"/>
+            <Label Content="Номер телефона:" Grid.Row="7" Grid.Column="0" Style="{DynamicResource Lable}"/>
 
-        <TextBox x:Name="PacNameTextBox" Style="{DynamicResource Textbox}" Grid.Row="0" Grid.Column="1">
-            <TextBox.Text>
-                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <validators:IsEmptyRule/>
-                        <validators:OnlyLettersRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-        <ItemsControl Grid.Row="1" Grid.Column="1" Grid.RowSpan="1"
-              Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+            <TextBox x:Name="PacNameTextBox" Style="{DynamicResource Textbox}" Grid.Row="0" Grid.Column="1">
+                <TextBox.Text>
+                    <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IsEmptyRule/>
+                            <validators:OnlyLettersRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl Grid.Row="1" Grid.Column="1" Grid.RowSpan="1"
+              Foreground="{DynamicResource MaterialDesignErrorText}" FontSize="10"
               ItemsSource="{Binding ElementName=PacNameTextBox, Path=(Validation.Errors)}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
 
-        <TextBox x:Name="PacSurnameTextBox" Style="{DynamicResource Textbox}" Grid.Row="2" Grid.Column="1">
-            <TextBox.Text>
-                <Binding Path="Surname" UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <validators:IsEmptyRule/>
-                        <validators:OnlyLettersRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-        <ItemsControl Grid.Row="3" Grid.Column="1" Grid.RowSpan="1"
-                      Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+            <TextBox x:Name="PacSurnameTextBox" Style="{DynamicResource Textbox}" Grid.Row="2" Grid.Column="1">
+                <TextBox.Text>
+                    <Binding Path="Surname" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IsEmptyRule/>
+                            <validators:OnlyLettersRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl Grid.Row="3" Grid.Column="1" Grid.RowSpan="1"
+                      Foreground="{DynamicResource MaterialDesignErrorText}" FontSize="10"
                       ItemsSource="{Binding ElementName=PacSurnameTextBox, Path=(Validation.Errors)}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
 
-        <TextBox x:Name="PacPatronimicTextBox" Style="{DynamicResource Textbox}" Grid.Row="4" Grid.Column="1">
-            <TextBox.Text>
-                <Binding Path="Patronimic" UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <validators:IsEmptyRule/>
-                        <validators:OnlyLettersRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-        <ItemsControl Grid.Row="5" Grid.Column="1" Grid.RowSpan="1"
-                      Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+            <TextBox x:Name="PacPatronimicTextBox" Style="{DynamicResource Textbox}" Grid.Row="4" Grid.Column="1">
+                <TextBox.Text>
+                    <Binding Path="Patronimic" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IsEmptyRule/>
+                            <validators:OnlyLettersRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl Grid.Row="5" Grid.Column="1" Grid.RowSpan="1"
+                      Foreground="{DynamicResource MaterialDesignErrorText}" FontSize="10"
                       ItemsSource="{Binding ElementName=PacPatronimicTextBox, Path=(Validation.Errors)}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
 
-        <DatePicker SelectedDate="{Binding Birthday, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Style="{DynamicResource Datepicker}" Grid.Row="6" Grid.Column="1"/>
+            <DatePicker SelectedDate="{Binding Birthday, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Style="{DynamicResource Datepicker}" Grid.Row="6" Grid.Column="1"/>
 
-        <TextBox x:Name="PacPhoneTextBox" Style="{DynamicResource Textbox}" Grid.Row="7" Grid.Column="1">
-            <TextBox.Text>
-                <Binding Path="PhoneNumber" UpdateSourceTrigger="PropertyChanged">
-                    <Binding.ValidationRules>
-                        <validators:IsEmptyRule/>
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-        <ItemsControl Grid.Row="8" Grid.Column="1" Grid.RowSpan="1"
-                      Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+            <TextBox x:Name="PacPhoneTextBox" Style="{DynamicResource Textbox}" Grid.Row="7" Grid.Column="1">
+                <TextBox.Text>
+                    <Binding Path="PhoneNumber" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IsEmptyRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl Grid.Row="8" Grid.Column="1" Grid.RowSpan="1"
+                      Foreground="{DynamicResource MaterialDesignErrorText}" FontSize="10"
                       ItemsSource="{Binding ElementName=PacPhoneTextBox, Path=(Validation.Errors)}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
 
-        <Button Name="ResetPacientBtn" Style="{DynamicResource StrokeButton}" Grid.Row="9" Grid.Column="1" Content="Сбросить" Click="ResetPacientBtn_Click"/>
-        <Button Name="BackBtn" Style="{DynamicResource StrokeButton}" Grid.Row="9" Content="Назад" Click="BackBtn_Click"/>
-        <Button Name="SaveChangesPacientBtn" Style="{DynamicResource DefaultButton}" Grid.Row="10" Grid.ColumnSpan="2" Content="Сохранить" Click="SaveChangesPacientBtn_Click" Width="296"/>
-    </Grid>
+            <Button Name="ResetPacientBtn" Style="{DynamicResource DeleteButton}" Grid.Row="9" Grid.Column="1" Content="Сбросить" Click="ResetPacientBtn_Click"/>
+            <Button Name="BackBtn" Style="{DynamicResource StrokeButton}" Grid.Row="9" Content="Назад" Click="BackBtn_Click"/>
+            <Button Name="SaveChangesPacientBtn" Style="{DynamicResource DefaultButton}" Grid.Row="10" Grid.ColumnSpan="2" Content="Сохранить" Click="SaveChangesPacientBtn_Click" Width="296"/>
+        </Grid>
+    </StackPanel>
 </Page>

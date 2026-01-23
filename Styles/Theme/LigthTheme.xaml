@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--фон-->
+    <SolidColorBrush x:Key="MaterialDesignPrimaryBackground" Color="#F5FAFB "/>
+    <SolidColorBrush x:Key="MaterialDesignSecondaryBackground" Color="#FFFFFF "/>
+    <SolidColorBrush x:Key="MaterialDesignInputBackground" Color="#F0F6F8 "/>
+
+    <!--граница-->
+    <SolidColorBrush x:Key="MaterialDesignBorder" Color="#3C4D55"/>
+
+    <!--текст-->
+    <SolidColorBrush x:Key="MaterialDesignPrimaryTitle" Color="#2E3B4E"/>
+    <SolidColorBrush x:Key="MaterialDesignPrimaryText" Color="#444B54"/>
+    <SolidColorBrush x:Key="MaterialDesignSecondaryText" Color="#6E7A89"/>
+    <SolidColorBrush x:Key="MaterialDesignErrorText" Color="#FFB3B3"/>
+    
+    <!--кнопки-->
+    <SolidColorBrush x:Key="MaterialDesignPrimaryButton" Color="#33B8B1"/>
+    <SolidColorBrush x:Key="MaterialDesignDangerousButton" Color="#E65A4F"/>
+
+    <!--акцент-->
+    <SolidColorBrush x:Key="MaterialDesignAccent" Color="#3A9AD9"/>
+
+    <!--ошибки валидации-->
+    <SolidColorBrush x:Key="MaterialDesignErrorBackground" Color="#FFE8E8 "/>
+    <SolidColorBrush x:Key="MaterialDesignErrorBorder" Color="#D93025 "/>
+
+
+</ResourceDictionary>

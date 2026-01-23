@@ -16,144 +16,148 @@
         <converters:LastAppointmentConverter x:Key="LastAppointmentConverter"/>
     </Page.Resources>
 
-    <Grid Width="600" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        
-        <StackPanel Name="PacInfoPanel" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Фамилия:" Style="{DynamicResource Lable}"/>
-                <Label Content="{Binding Surname, Mode=OneWay}" Style="{DynamicResource Lable}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Имя:" Style="{DynamicResource Lable}"/>
-                <Label Content="{Binding Name, Mode=OneWay}" Style="{DynamicResource Lable}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Отчество:" Style="{DynamicResource Lable}"/>
-                <Label Content="{Binding Patronimic, Mode=OneWay}" Style="{DynamicResource Lable}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Номер телефона:" Style="{DynamicResource Lable}"/>
-                <TextBlock Text="{Binding PhoneNumber, Mode=OneWay, StringFormat={}{0:8 (###) ### ## ##}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Дата рождения:" Style="{DynamicResource Lable}"/>
-                <Label Content="{Binding Birthday, Mode=OneWay}" Style="{DynamicResource Lable}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Возраст:" Style="{DynamicResource Lable}"/>
-                <Label Content="{Binding Birthday, Mode=OneWay, Converter={StaticResource AgeConverter}}" Style="{DynamicResource Lable}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Статус:" Style="{DynamicResource Lable}"/>
-                <Label Content="{Binding Birthday, Mode=OneWay, Converter={StaticResource AdultConverter}}" Style="{DynamicResource Lable}"/>
-            </StackPanel>
-        </StackPanel>
 
-        <Label Grid.Row="1" Grid.Column="0" Content="Дата: " Style="{DynamicResource Lable}"/>
-        <Label Grid.Row="3" Grid.Column="0" Content="Диагноз: " Style="{DynamicResource Lable}"/>
-        <Label Grid.Row="5" Grid.Column="0" Content="Рекоммендации: " Style="{DynamicResource Lable}"/>
-        
-        <Grid x:Name="AddmissionPanel" Grid.Row="1" Grid.RowSpan="5" Grid.Column="1">
+    <StackPanel>
+        <Label Content="Прием" Style="{DynamicResource Title}"/>
+        <Grid Width="600" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="4*"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
-            <DatePicker Grid.Row="0" SelectedDate="{Binding Date, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Style="{DynamicResource Datepicker}"/>
 
-            <TextBox x:Name="DiagnosisTextBox" Style="{DynamicResource Textbox}" Grid.Row="1">
-                <TextBox.Text>
-                    <Binding Path="Diagnosis" UpdateSourceTrigger="PropertyChanged">
-                        <Binding.ValidationRules>
-                            <validators:IsEmptyRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
-            <ItemsControl Grid.Row="2" Grid.RowSpan="1"
-              Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+            <StackPanel Name="PacInfoPanel" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Фамилия:" Style="{DynamicResource Lable}"/>
+                    <Label Content="{Binding Surname, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Имя:" Style="{DynamicResource Lable}"/>
+                    <Label Content="{Binding Name, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Отчество:" Style="{DynamicResource Lable}"/>
+                    <Label Content="{Binding Patronimic, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Номер телефона:" Style="{DynamicResource Lable}"/>
+                    <TextBlock Style="{DynamicResource TextBlock}" Text="{Binding PhoneNumber, Mode=OneWay, StringFormat={}{0:8 (###) ### ## ##}}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Дата рождения:" Style="{DynamicResource Lable}"/>
+                    <Label Content="{Binding Birthday, Mode=OneWay}" Style="{DynamicResource Lable}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Возраст:" Style="{DynamicResource Lable}"/>
+                    <Label Content="{Binding Birthday, Mode=OneWay, Converter={StaticResource AgeConverter}}" Style="{DynamicResource Lable}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Статус:" Style="{DynamicResource Lable}"/>
+                    <Label Content="{Binding Birthday, Mode=OneWay, Converter={StaticResource AdultConverter}}" Style="{DynamicResource Lable}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="Дата: " Style="{DynamicResource Lable}"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Диагноз: " Style="{DynamicResource Lable}"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Рекоммендации: " Style="{DynamicResource Lable}"/>
+
+            <Grid x:Name="AddmissionPanel" Grid.Row="1" Grid.RowSpan="5" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <DatePicker Grid.Row="0" SelectedDate="{Binding Date, Mode=TwoWay}" DisplayDateStart="1920-01-01" DisplayDateEnd="{x:Static system:DateTime.Today}" Style="{DynamicResource Datepicker}"/>
+
+                <TextBox x:Name="DiagnosisTextBox" Style="{DynamicResource Textbox}" Grid.Row="1">
+                    <TextBox.Text>
+                        <Binding Path="Diagnosis" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <validators:IsEmptyRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                <ItemsControl Grid.Row="2" Grid.RowSpan="1"
+              Foreground="{DynamicResource MaterialDesignErrorText}" FontSize="10"
               ItemsSource="{Binding ElementName=DiagnosisTextBox, Path=(Validation.Errors)}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
 
-            <TextBox x:Name="RecommendationsTextBox" Style="{DynamicResource Textbox}" Grid.Row="3">
-                <TextBox.Text>
-                    <Binding Path="Recommendations" UpdateSourceTrigger="PropertyChanged">
-                        <Binding.ValidationRules>
-                            <validators:IsEmptyRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
-            </TextBox>
+                <TextBox x:Name="RecommendationsTextBox" Style="{DynamicResource Textbox}" Grid.Row="3">
+                    <TextBox.Text>
+                        <Binding Path="Recommendations" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <validators:IsEmptyRule/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
 
-            <ItemsControl Grid.Row="4" Grid.Column="1" Grid.RowSpan="1"
-              Foreground="{DynamicResource ErrorStyle}" FontSize="10"
+                <ItemsControl Grid.Row="4" Grid.Column="1" Grid.RowSpan="1"
+              Foreground="{DynamicResource MaterialDesignErrorText}" FontSize="10"
               ItemsSource="{Binding ElementName=RecommendationsTextBox, Path=(Validation.Errors)}">
-                <ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+
+            <Button x:Name="BackBtn" Grid.Row="7" Grid.Column="0"  Content="Назад" Style="{DynamicResource StrokeButton}" Click="BackBtn_Click"/>
+            <Button x:Name="SaveAddmissionBtn" Grid.Row="7" Grid.Column="1"  Content="Сохранить" Style="{DynamicResource DefaultButton}" Click="SaveAddmissionBtn_Click"/>
+
+
+            <ListView ItemsSource="{Binding PacientAppointmentStory}" Grid.Column="2" Grid.RowSpan="6" Style="{DynamicResource Listview}" ItemContainerStyle="{DynamicResource ListviewItem}">
+                <ListView.Resources>
+                    <Style TargetType="ScrollBar" BasedOn="{StaticResource Scrollbar}"/>
+                </ListView.Resources>
+
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding ErrorContent}" TextWrapping="Wrap"/>
+                        <StackPanel x:Name="PacInfoPanel" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Style="{DynamicResource Lable}" Content="Дата"/>
+                                <Label Style="{DynamicResource Lable}" Content="{Binding Date, Mode=OneWay}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Style="{DynamicResource Lable}" Content="ID врача"/>
+                                <Label Style="{DynamicResource Lable}" Content="{Binding DoctorId, Mode=OneWay}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Style="{DynamicResource Lable}" Content="Диагноз"/>
+                                <Label Style="{DynamicResource Lable}" Content="{Binding Diagnosis, Mode=OneWay}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Style="{DynamicResource Lable}" Content="Рекоммендации"/>
+                                <Label Style="{DynamicResource Lable}" Content="{Binding Recommendations, Mode=OneWay}"/>
+                            </StackPanel>
+                        </StackPanel>
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="7">
+                <Label Content="Последний прием:" Style="{DynamicResource Lable}"/>
+                <Label Content="{Binding PacientAppointmentStory, Converter={StaticResource LastAppointmentConverter}}" Style="{DynamicResource Lable}"/>
+            </StackPanel>
         </Grid>
-
-        <Button x:Name="BackBtn" Grid.Row="7" Grid.Column="0"  Content="Назад" Style="{DynamicResource StrokeButton}" Click="BackBtn_Click"/>
-        <Button x:Name="SaveAddmissionBtn" Grid.Row="7" Grid.Column="1"  Content="Сохранить" Style="{DynamicResource DefaultButton}" Click="SaveAddmissionBtn_Click"/>
-
-
-        <ListView ItemsSource="{Binding PacientAppointmentStory}" Grid.Column="2" Grid.RowSpan="6" Style="{DynamicResource Listview}" ItemContainerStyle="{DynamicResource ListviewItem}">
-            <ListView.Resources>
-                <Style TargetType="ScrollBar" BasedOn="{StaticResource Scrollbar}"/>
-            </ListView.Resources>
-            
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel x:Name="PacInfoPanel" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
-                        <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="Дата"/>
-                            <Label Style="{DynamicResource Lable}" Content="{Binding Date, Mode=OneWay}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="ID врача"/>
-                            <Label Style="{DynamicResource Lable}" Content="{Binding DoctorId, Mode=OneWay}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="Диагноз"/>
-                            <Label Style="{DynamicResource Lable}" Content="{Binding Diagnosis, Mode=OneWay}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Style="{DynamicResource Lable}" Content="Рекоммендации"/>
-                            <Label Style="{DynamicResource Lable}" Content="{Binding Recommendations, Mode=OneWay}"/>
-                        </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="7">
-            <Label Content="Последний прием:" Style="{DynamicResource Lable}"/>
-            <Label Content="{Binding PacientAppointmentStory, Converter={StaticResource LastAppointmentConverter}}" Style="{DynamicResource Lable}"/>
-        </StackPanel>
-    </Grid>
+    </StackPanel>
 </Page>

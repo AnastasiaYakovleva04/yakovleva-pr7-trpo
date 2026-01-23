@@ -1,9 +1,28 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="DarkblueStyle" Color="#eeeffd"/>
-    <SolidColorBrush x:Key="DeepBlueStyle" Color="#3f40af"/>
-    <SolidColorBrush x:Key="BlueStyle" Color="#5865DC"/>
-    <SolidColorBrush x:Key="LightblueStyle" Color="#122056"/>
-    <SolidColorBrush x:Key="WhiteStyle" Color="#0a0a0a"/>
-    <SolidColorBrush x:Key="BlackStyle" Color="#fafafd"/>
+
+    <!--фон-->
+    <SolidColorBrush x:Key="MaterialDesignPrimaryBackground" Color="#1E2A32 "/>
+    <SolidColorBrush x:Key="MaterialDesignSecondaryBackground" Color="#2A3C46 "/>
+    <SolidColorBrush x:Key="MaterialDesignInputBackground" Color="#324650 "/>
+
+    <!--граница-->
+    <SolidColorBrush x:Key="MaterialDesignBorder" Color="#3C4D55 "/>
+
+    <!--текст-->
+    <SolidColorBrush x:Key="MaterialDesignPrimaryTitle" Color="#D6F4FF"/>
+    <SolidColorBrush x:Key="MaterialDesignPrimaryText" Color="#E4E8EB"/>
+    <SolidColorBrush x:Key="MaterialDesignSecondaryText" Color="#A1B4BF"/>
+    <SolidColorBrush x:Key="MaterialDesignErrorText" Color="#FFB3B3"/>
+
+    <!--кнопки-->
+    <SolidColorBrush x:Key="MaterialDesignPrimaryButton" Color="#33B8B1"/>
+    <SolidColorBrush x:Key="MaterialDesignDangerousButton" Color="#E65A4F"/>
+
+    <!--акцент-->
+    <SolidColorBrush x:Key="MaterialDesignAccent" Color="#4FC3C7"/>
+
+    <!--ошибки валидации-->
+    <SolidColorBrush x:Key="MaterialDesignErrorBackground" Color="#3B1E1E "/>
+    <SolidColorBrush x:Key="MaterialDesignErrorBorder" Color="#FFB3B3 "/>
 </ResourceDictionary>

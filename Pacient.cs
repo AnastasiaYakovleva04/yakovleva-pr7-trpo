@@ -124,5 +124,18 @@ namespace yakovleva_pr7
             Birthday = DateTime.MinValue;
             PhoneNumber = 0;
         }
+        //удаление пациента
+        public void DeletePacient()
+        {
+            if (!pacients.ContainsKey(Id))
+                throw new ArgumentException("Пациент с таким ID не найден");
+
+            pacients.Remove(Id);
+            var path = Path.Combine("Pacients", $"P_{Id}.json");
+            if (File.Exists(path))
+                File.Delete(path);
+            else
+                throw new FileNotFoundException("Файл пациента не найден");
+        }
     }
 }

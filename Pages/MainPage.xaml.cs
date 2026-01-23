@@ -65,5 +65,34 @@ namespace yakovleva_pr7.Pages
             }
             NavigationService.Navigate(new AddmissionPacientPage(SelectedPacient, doc));
         }
+
+        private void DeletePacientBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (SelectedPacient == null)
+            {
+                MessageBox.Show("Пациент не выбран");
+                return;
+            }
+            var result = MessageBox.Show(
+                $"Вы точно хотите удалить пациента {SelectedPacient.Surname} {SelectedPacient.Name} {SelectedPacient.Patronimic}?",
+                "Подтверждение удаления",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question,
+                MessageBoxResult.No);
+
+            if (result != MessageBoxResult.Yes)
+                return;
+            try
+            {
+                int pacientId = SelectedPacient.Id;
+                SelectedPacient.DeletePacient();
+                Pacients.Remove(SelectedPacient);
+                sys.UpdateCounts();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
     }
 }
